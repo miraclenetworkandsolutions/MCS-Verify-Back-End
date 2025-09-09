@@ -1,0 +1,26 @@
+{
+  "name": "mcs-verify",
+  "version": "1.0.0",
+  "description": "MCs Certificate verification System",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miraclenetworkandsolutions/MCS-Verify-Back-End.git"
+  },
+  "author": "Miracle Network and Solutions",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miraclenetworkandsolutions/MCS-Verify-Back-End/issues"
+  },
+  "homepage": "https://github.com/miraclenetworkandsolutions/MCS-Verify-Back-End#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "crypto-js": "^4.2.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "sequelize": "^6.37.7"
+  }
+}
