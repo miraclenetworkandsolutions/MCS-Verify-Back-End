@@ -104,9 +104,6 @@ exports.addUser = async (req, res, next) => {
       { transaction: t }
     );
 
-    // Log the creation in the audit trail
-    await logAuditTrail(req, User, "CREATE", "User", userName, "user", userName, null, null, null, newData.dataValues, {}, t);
-
     await t.commit();
 
     res.status(201).json({

@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const sequelize = require("./util/database");
-const { syncSystemData } = require("./util/createSystemData");
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -18,10 +18,8 @@ app.use((req, res, next) => {
 
 //Import Routes
 
-const acl_moduleRoutes = require("./routes/acl_module");
-app.use(acl_moduleRoutes);
-
-
+const user = require("./routes/user");``
+app.use(user);
 
 console.log(`${process.env.PORT}`);
 console.log(`${process.env.MYSQL_HOST}`);
@@ -37,15 +35,14 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message });
 });
 
-// isProduction = true;
-isProduction = false;
+isProduction = true;
+//isProduction = false;
 
 if (isProduction) {
   sequelize
     .sync({ alter: { drop: false } })
     .then(async (result) => {
       // console.log(result);
-      await syncSystemData();
       app.listen(`${process.env.PORT}`);
       console.log(`app.listen(${process.env.PORT})`);
     })
