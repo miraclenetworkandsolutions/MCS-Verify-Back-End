@@ -18,8 +18,11 @@ app.use((req, res, next) => {
 
 //Import Routes
 
-const user = require("./routes/user");``
+const user = require("./routes/user");
+const student = require("./routes/student");
+
 app.use(user);
+app.use(student);
 
 console.log(`${process.env.PORT}`);
 console.log(`${process.env.MYSQL_HOST}`);
