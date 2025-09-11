@@ -3,7 +3,6 @@ const User =require('../models/user');
 const {validationResult}= require('express-validator');
 const sequelize = require('../util/database');
 const { Op } = require('sequelize');
-const { model } = require('mongoose');
 
 exports.createStudent=async(req,res)=>{
     
