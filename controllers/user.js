@@ -4,6 +4,8 @@ const sequelize = require("../util/database");
 const User = require("../models/user");
 const { Op } = require("sequelize");
 
+// Get a single user
+
 /**@author Ganidu */
 exports.getUser = async (req, res, next) => {
   const userName = req.params.userName;
@@ -31,6 +33,8 @@ exports.getUser = async (req, res, next) => {
     });
 };
 
+// Get all users 
+
 /**@author Ganidu */
 exports.getUsers = async (req, res, next) => {
   await User.findAll()
@@ -53,6 +57,8 @@ exports.getUsers = async (req, res, next) => {
       }
     });
 };
+
+// Post
 
 /**@author Ganidu */
 exports.addUser = async (req, res, next) => {
@@ -123,6 +129,8 @@ exports.addUser = async (req, res, next) => {
     }
   }
 };
+
+// Put
 
 /**@author Ganidu */
 exports.updateUser = async (req, res, next) => {
@@ -215,6 +223,8 @@ exports.updateUser = async (req, res, next) => {
   }
 };
 
+// Search with pagination 
+
 exports.UsersSearch = async (req, res, next) => {
   /**MAIN PARAMS */
   const pageNo = parseInt(req.params.pageNo);
@@ -282,6 +292,7 @@ exports.UsersSearch = async (req, res, next) => {
   }
 };
 
+// Get short user info 
 
 exports.getUserShort = async (req, res, next) => {
   await User.findAll({
@@ -307,6 +318,7 @@ exports.getUserShort = async (req, res, next) => {
     });
 };
 
+// Delete user
 
 /**@author Ganidu */
 exports.deleteUser = async (req, res, next) => {
@@ -345,6 +357,7 @@ exports.deleteUser = async (req, res, next) => {
   }
 };
 
+// Set user inactive 
 // @author Ganidu
 exports.inactiveUser = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -383,6 +396,8 @@ exports.inactiveUser = async (req, res, next) => {
     }
   }
 };
+
+// Paginated users with filter 
 
 /**@author Ganidu */
 exports.getUserPg = async (req, res, next) => {
