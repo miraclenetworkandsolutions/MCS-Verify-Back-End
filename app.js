@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const sequelize = require("./util/database");
+const certificate = require("./routes/certificate");
 
 
 const app = express();
@@ -18,8 +19,10 @@ app.use((req, res, next) => {
 
 //Import Routes
 
-const user = require("./routes/user");``
+const user = require("./routes/user");const Certificate = require("./routes/certificate");
+``
 app.use(user);
+app.use(certificate);
 
 console.log(`${process.env.PORT}`);
 console.log(`${process.env.MYSQL_HOST}`);
