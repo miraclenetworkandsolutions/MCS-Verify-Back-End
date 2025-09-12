@@ -85,30 +85,30 @@ exports.createStudent=async(req,res)=>{
     }
 };
 
-// exports.getAllStudents=async(req,res)=>{
-//     try{
-//         const students=await Student.findAll({
-//             include:[{
-//                 model:User,
-//                 attributes:['userName']
-//             }]
-//         });
-//         res.status(200).jason({
-//             success:true,
-//             count:student.length,
-//             data:students
-//         });
+exports.getAllStudents=async(req,res)=>{
+    try{
+        const students=await Student.findAll({
+            include:[{
+                model:User,
+                attributes:['userName']
+            }]
+        });
+        res.status(200).json({
+            success:true,
+            count:students.length,
+            data:students
+        });
 
         
-//     }catch (error){
-//         console.error(error);
-//         res.status(500).json({
-//             success:false,
-//             message:"Fetching Students Failed",
-//             error:error.message
-//         });
-//     }
-// };
+    }catch (error){
+        console.error(error);
+        res.status(500).json({
+            success:false,
+            message:"Fetching Students Failed",
+            error:error.message
+        });
+    }
+};
 
 //get student using id
 exports.getStudentById=async(req,res)=>{
@@ -176,6 +176,7 @@ exports.updateStudent=async(req,res)=>{
             mobileNo,
             email
         }=req.body;
+        
         const student=await Student.findByPk(studentId);
         if(!student){
             return res.status(404).json({

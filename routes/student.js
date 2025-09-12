@@ -8,7 +8,7 @@ const router = express.Router();
 
 // GET
 router.get('/student/:studentId', studentController.getStudentById);
-router.get('/students', studentController.createStudent);
+router.get('/students', studentController.getAllStudents);
 //router.get('/student_pg/:filter/:NumOfLine/:pageNo', studentController.getStudentPg);
 router .get('/student_sh/:searchText/:numOfLine/:pageNo', studentController.StudentSearch);
 
