@@ -38,12 +38,12 @@ const Institute = db.define('institute', {
       allowNull: true
   },
   userName: {
-      type: Sequelize.STRING(10),
-      allowNull: true
+      type: Sequelize.STRING(45),
+      allowNull: false
   },
   accountName: {
-      type: Sequelize.STRING(10),
-      allowNull: true
+      type: Sequelize.STRING(45),
+      allowNull: false
   },
   email: {
       type: Sequelize.STRING(50), // Note: This is very short for an email, consider increasing

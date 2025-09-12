@@ -54,7 +54,7 @@ const Student = db.define('student', {
         allowNull: true,
     },
      userName:{
-         type: Sequelize.STRING(100),
+         type: Sequelize.STRING(45),
        
 
          allowNull: false,
