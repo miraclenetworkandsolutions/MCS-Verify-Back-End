@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 const db = require('../util/database');
-// const Student = require('./student');
+const Student = require('./student');
 const User = require('./user');
 // const Course = require('./course');
-// const Institute = require('./institute');
+const Institute = require('./institute');
 
 
 const Certificate = db.define('certificate', {
@@ -67,8 +67,8 @@ const Certificate = db.define('certificate', {
 
 // Certificate.belongsTo(Student, { foreignKey: 'stuId'})
 // Certificate.belongsTo(Institute, { foreignKey: 'instCode'})
-// Certificate.belongsTo(Course, { foreignKey: 'courseCode'})
-Certificate.belongsTo(User, { foreignKey: 'userName'})
+// // Certificate.belongsTo(Course, { foreignKey: 'courseCode'})
+// Certificate.belongsTo(User, { foreignKey: 'userName'})
 
 
 module.exports = Certificate;
