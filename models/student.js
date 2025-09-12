@@ -78,6 +78,6 @@ const Student = db.define('student', {
 
 );
 // User.hasMany(Student,{foreignKey: 'userName'});
-Student.belongsTo(User,{foreignKey: 'userName'});
+// Student.belongsTo(User,{foreignKey: 'userName'});
 
 module.exports = Student;

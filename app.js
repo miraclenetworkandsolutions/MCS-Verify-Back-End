@@ -20,10 +20,15 @@ app.use((req, res, next) => {
 const user = require("./routes/user");
 const student = require("./routes/student");
 const certificate = require("./routes/certificate");
+// const course= require("./routes/course");
+const institute = require("./routes/institute");
 
 app.use(user);
 app.use(student);
 app.use(certificate);
+// app.use(course);
+app.use(institute);
+
 
 console.log(`${process.env.PORT}`);
 console.log(`${process.env.MYSQL_HOST}`);
